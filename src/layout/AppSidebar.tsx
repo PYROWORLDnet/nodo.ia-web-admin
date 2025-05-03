@@ -8,7 +8,6 @@ import {
   BoxIcon,
   CreditCardIcon,
   GridIcon,
-  UserIcon
 } from "../icons/index";
 
 type NavItem = {
@@ -21,8 +20,8 @@ type NavItem = {
 const navItems: NavItem[] = [
   {
     icon: <GridIcon />,
+    path:'/',
     name: "Dashboard",
-    subItems: [{ name: "Ecommerce", path: "/", pro: false }],
   },
   {
     icon: <BoxIcon />,
@@ -33,6 +32,11 @@ const navItems: NavItem[] = [
     icon: <CreditCardIcon />,
     name: "Billing",
     path: "/billing",
+  },
+  {
+    icon: <CreditCardIcon />,
+    name: "Login",
+    path: "/signin",
   },
 ];
 

@@ -1,4 +1,3 @@
-import { useTheme } from '@/context/ThemeContext';
 import IconWrapper from '@/components/ui/icon/IconWrapper';
 
 export const UserIcon = ({ className = "" }) => (

@@ -27,7 +27,7 @@ export default function DemographicCard() {
             Customers Demographic
           </h3>
           <p className="mt-1 text-gray-600 dark:text-gray-300 text-theme-sm">
-            Number of customer based on country
+            Number of customer based on location
           </p>
         </div>
 
@@ -80,7 +80,7 @@ export default function DemographicCard() {
             </div>
             <div>
               <p className="font-semibold text-black dark:text-white text-theme-sm">
-                USA
+                SANTO DOMINGO
               </p>
               <span className="block text-gray-600 dark:text-gray-300 text-theme-xs">
                 2,379 Customers
@@ -111,7 +111,7 @@ export default function DemographicCard() {
             </div>
             <div>
               <p className="font-semibold text-black dark:text-white text-theme-sm">
-                France
+                Beach
               </p>
               <span className="block text-gray-600 dark:text-gray-300 text-theme-xs">
                 589 Customers

@@ -2,9 +2,8 @@
 import Checkbox from "@/components/form/input/Checkbox";
 import Input from "@/components/form/input/InputField";
 import Label from "@/components/form/Label";
-import { ChevronLeftIcon, EyeCloseIcon, EyeIcon } from "@/icons";
+import { ChevronLeftIcon } from "@/icons";
 import Link from "next/link";
-import Image from "next/image";
 import React, { useState } from "react";
 
 export default function SignUpForm() {
@@ -123,6 +122,29 @@ export default function SignUpForm() {
                     id="email"
                     name="email"
                     placeholder="Enter your email"
+                  />
+                </div>
+                <div>
+                  <Label>
+                    Business Address<span className="text-error-500">*</span>
+                  </Label>
+                  <Input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your address"
+                  />
+                </div>
+                {/* <!-- Cedula --> */}
+                <div>
+                  <Label>
+                    Cedula<span className="text-error-500">*</span>
+                  </Label>
+                  <Input
+                    type="text"
+                    id="cedula"
+                    name="cedula"
+                    placeholder="XXX-XXXXXXX-X"
                   />
                 </div>
                 {/* <!-- Password --> */}

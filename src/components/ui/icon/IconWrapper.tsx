@@ -1,8 +1,6 @@
 "use client";
 
 import React from 'react';
-import { useTheme } from '@/context/ThemeContext';
-
 interface IconWrapperProps {
   children: React.ReactNode;
   className?: string;
@@ -14,7 +12,6 @@ const IconWrapper: React.FC<IconWrapperProps> = ({
   className = "",
   variant = 'default'
 }) => {
-  const { theme } = useTheme();
 
   const getIconColor = () => {
     switch (variant) {

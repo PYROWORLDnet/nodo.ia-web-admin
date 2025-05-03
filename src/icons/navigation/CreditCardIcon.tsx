@@ -1,4 +1,4 @@
-import { IconWrapper } from "../IconWrapper";
+import IconWrapper from "@/components/ui/icon/IconWrapper";
 
 export const CreditCardIcon = ({ className = "" }) => (
   <IconWrapper className={className}>

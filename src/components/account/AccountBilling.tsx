@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Button from "@/components/ui/button/Button";
 import Badge from "@/components/ui/badge/Badge";
-import { ReceiptIcon, HistoryIcon } from "@/icons";
+import { ReceiptIcon } from "@/icons";
 
 interface Subscription {
   plan: 'free' | 'analytics' | 'promo';
@@ -41,7 +41,7 @@ export default function AccountBilling() {
     price: 0
   });
 
-  const [payments, setPayments] = useState<Payment[]>([
+  const [payments,] = useState<Payment[]>([
     {
       id: '1',
       date: '2024-01-15',
@@ -218,7 +218,7 @@ export default function AccountBilling() {
         <div className="mb-4">
           <select
             value={paymentFilter}
-            onChange={(e) => setPaymentFilter(e.target.value as any)}
+            onChange={(e) => setPaymentFilter(e.target.value as 'all' | 'subscription' | 'credits' | 'promotion')}
             className="rounded-lg border-2 border-gray-200 px-4 py-2 dark:border-gray-700"
           >
             <option value="all">All Transactions</option>

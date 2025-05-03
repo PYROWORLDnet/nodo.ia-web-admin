@@ -127,7 +127,7 @@ export default function StatisticsChart() {
             Statistics
           </h3>
           <p className="mt-1 text-gray-600 dark:text-gray-300 text-theme-sm">
-            Target you've set for each month
+            Target you&apos;ve set for each month
           </p>
         </div>
         <div className="flex items-start w-full gap-3 sm:justify-end">

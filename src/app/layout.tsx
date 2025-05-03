@@ -2,15 +2,15 @@ import { Outfit } from 'next/font/google';
 import './globals.css';
 import { SidebarProvider } from '@/context/SidebarContext';
 import { ThemeProvider } from '@/context/ThemeContext';
-import type { Metadata } from 'nextttt';
+import type { Metadata } from 'next';
 
 const outfit = Outfit({
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: 'Admin Dashboard',
-  description: 'Next.js Admin Dashboard',
+  title: 'Nodoia.do',
+  description: 'Nodoia is a platform for business owners to manage their business with ai growing tools',
 };
 
 export default function RootLayout({

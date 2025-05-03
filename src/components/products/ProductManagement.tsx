@@ -10,7 +10,7 @@ import {
 import Badge from "../ui/badge/Badge";
 import Image from "next/image";
 import Button from "../ui/button/Button";
-import { PlusIcon, FileIcon, UserIcon } from "@/icons";
+import { PlusIcon, FileIcon } from "@/icons";
 import Pagination from "../tables/Pagination";
 
 interface Product {
@@ -201,7 +201,6 @@ export default function ProductManagement() {
     reader.onload = (e) => {
       const text = e.target?.result as string;
       const rows = text.split('\n');
-      const headers = rows[0].split(',');
 
       const newProducts = rows.slice(1).map((row, index) => {
         const values = row.split(',');
