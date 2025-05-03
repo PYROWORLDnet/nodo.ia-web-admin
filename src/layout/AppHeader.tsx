@@ -87,7 +87,7 @@ const AppHeader: React.FC = () => {
               width={40}
               height={40}
               className="dark:hidden"
-              src="/logoLight.svg"
+              src="/logolight.svg"
               alt="Logo"
             />
             <Image
