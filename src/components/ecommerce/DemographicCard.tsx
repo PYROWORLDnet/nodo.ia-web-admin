@@ -1,12 +1,11 @@
 "use client";
-import Image from "next/image";
 
-import CountryMap from "./CountryMap";
-import { useState } from "react";
 import { MoreDotIcon } from "@/icons";
+import { useState } from "react";
 import { Dropdown } from "../ui/dropdown/Dropdown";
 import { DropdownItem } from "../ui/dropdown/DropdownItem";
 import IconWrapper from "../ui/icon/IconWrapper";
+import CountryMap from "./CountryMap";
 
 export default function DemographicCard() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +26,7 @@ export default function DemographicCard() {
             Customers Demographic
           </h3>
           <p className="mt-1 text-gray-600 dark:text-gray-300 text-theme-sm">
-            Number of customer based on location
+            Number of customer based on country
           </p>
         </div>
 
@@ -65,7 +64,7 @@ export default function DemographicCard() {
           <CountryMap />
         </div>
       </div>
-
+{/* 
       <div className="space-y-5">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -80,7 +79,7 @@ export default function DemographicCard() {
             </div>
             <div>
               <p className="font-semibold text-black dark:text-white text-theme-sm">
-                SANTO DOMINGO
+                USA
               </p>
               <span className="block text-gray-600 dark:text-gray-300 text-theme-xs">
                 2,379 Customers
@@ -111,7 +110,7 @@ export default function DemographicCard() {
             </div>
             <div>
               <p className="font-semibold text-black dark:text-white text-theme-sm">
-                Beach
+                France
               </p>
               <span className="block text-gray-600 dark:text-gray-300 text-theme-xs">
                 589 Customers
@@ -128,7 +127,7 @@ export default function DemographicCard() {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

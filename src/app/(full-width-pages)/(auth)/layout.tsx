@@ -1,4 +1,3 @@
-import GridShape from "@/components/common/GridShape";
 import ThemeTogglerTwo from "@/components/common/ThemeTogglerTwo";
 
 import { ThemeProvider } from "@/context/ThemeContext";
@@ -19,7 +18,6 @@ export default function AuthLayout({
           <div className="lg:w-1/2 w-full h-full bg-[#f4f6fa] dark:bg-white/5 lg:grid items-center hidden">
             <div className="relative items-center justify-center  flex z-1">
               {/* <!-- ===== Common Grid Shape Start ===== --> */}
-              <GridShape />
               <div className="flex flex-col items-center max-w-xs">
                 <Link href="/" className="block mb-4">
                   <Image
@@ -38,7 +36,7 @@ export default function AuthLayout({
                   />
                 </Link>
                 <p className="text-center text-gray-400 dark:text-white/60">
-                  NodoAi is a platform of Dominaca Republic of
+                  NodoAi is a platform of Dominaca Republic
                 </p>
               </div>
             </div>

@@ -1,9 +1,11 @@
-import IconWrapper from "@/components/ui/icon/IconWrapper";
+import { IconWrapper } from './IconWrapper';
 
-export const CreditCardIcon = ({ className = "" }) => (
+interface CreditCardIconProps {
+  className?: string;
+}
+
+export const CreditCardIcon = ({ className = "" }: CreditCardIconProps) => (
   <IconWrapper className={className}>
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M20 4H4C2.89 4 2 4.89 2 6V18C2 19.11 2.89 20 4 20H20C21.11 20 22 19.11 22 18V6C22 4.89 21.11 4 20 4ZM20 18H4V12H20V18ZM20 8H4V6H20V8Z" fill="currentColor"/>
-    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-banknote-arrow-down-icon lucide-banknote-arrow-down dark:stroke-white stroke-black"><path d="M12 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5" /><path d="m16 19 3 3 3-3" /><path d="M18 12h.01" /><path d="M19 16v6" /><path d="M6 12h.01" /><circle cx="12" cy="12" r="2" /></svg>
   </IconWrapper>
 ); 

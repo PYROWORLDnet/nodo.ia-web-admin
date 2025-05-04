@@ -4,11 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useSidebar } from "../context/SidebarContext";
-import {
-  BoxIcon,
-  CreditCardIcon,
-  GridIcon,
-} from "../icons/index";
+import { BoxIcon, CreditCardIcon, GridIcon, AnalyticsIcon } from "../icons/navigation";
 
 type NavItem = {
   name: string;
@@ -20,8 +16,8 @@ type NavItem = {
 const navItems: NavItem[] = [
   {
     icon: <GridIcon />,
-    path:'/',
     name: "Dashboard",
+    path: "/",
   },
   {
     icon: <BoxIcon />,
@@ -29,20 +25,26 @@ const navItems: NavItem[] = [
     path: "/products",
   },
   {
+    icon: <AnalyticsIcon />,
+    name: "Analytics",
+    path: "/analytics",
+  },
+  {
     icon: <CreditCardIcon />,
     name: "Billing",
     path: "/billing",
   },
-  {
-    icon: <CreditCardIcon />,
-    name: "Login",
-    path: "/signin",
-  },
 ];
 
 const AppSidebar: React.FC = () => {
-  const { isExpanded, isMobileOpen, isHovered, setIsHovered } = useSidebar();
+  const { isExpanded, isMobileOpen, isHovered, setIsHovered, toggleMobileSidebar } = useSidebar();
   const pathname = usePathname();
+
+  const handleLinkClick = () => {
+    if (isMobileOpen) {
+      toggleMobileSidebar();
+    }
+  };
 
   const renderMenuItems = (
     navItems: NavItem[],
@@ -78,6 +80,7 @@ const AppSidebar: React.FC = () => {
             nav.path && (
               <Link
                 href={nav.path}
+                onClick={handleLinkClick}
                 className={`menu-item group ${isActive(nav.path) ? "menu-item-active" : "menu-item-inactive"
                   }`}
               >
@@ -205,10 +208,10 @@ const AppSidebar: React.FC = () => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div
-        className={`py-3 flex  ${!isExpanded && !isHovered ? "lg:justify-center" : "justify-start"
+        className={`py-3 flex ${!isExpanded && !isHovered ? "lg:justify-center" : "justify-start"
           }`}
       >
-        <Link href="/" className="mx-auto">
+        <Link href="/" className="mx-auto md:block hidden">
           {isExpanded || isHovered || isMobileOpen ? (
             <>
               <Image

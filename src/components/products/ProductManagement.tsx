@@ -10,7 +10,7 @@ import {
 import Badge from "../ui/badge/Badge";
 import Image from "next/image";
 import Button from "../ui/button/Button";
-import { PlusIcon, FileIcon } from "@/icons";
+import { PlusIcon, FileIcon } from "../../icons/actions";
 import Pagination from "../tables/Pagination";
 
 interface Product {
@@ -252,7 +252,7 @@ export default function ProductManagement() {
             variant="primary"
             startIcon={<PlusIcon />}
             onClick={() => setShowAddProductModal(true)}
-            className="border-2 border-[var(--color-gray-800)] hover:bg-[var(--color-gray-800)] hover:text-white transition-colors"
+            className="border-2 text-sm border-[var(--color-gray-800)] hover:bg-[var(--color-gray-800)] transition-colors h-10 whitespace-nowrap"
           >
             Add New Product
           </Button>
@@ -266,7 +266,7 @@ export default function ProductManagement() {
             />
             <label
               htmlFor="bulk-upload"
-              className="cursor-pointer inline-flex items-center gap-2 px-4 py-2 border-2 border-[var(--color-gray-800)] rounded-lg hover:bg-[var(--color-gray-800)] hover:text-white transition-colors"
+              className="cursor-pointer whitespace-nowrap text-sm inline-flex items-center gap-2 px-4 py-2 border-2 border-[var(--color-gray-800)] rounded-lg hover:bg-[var(--color-gray-800)] transition-colors"
             >
               <FileIcon />
               Bulk Upload
@@ -274,13 +274,13 @@ export default function ProductManagement() {
           </div>
         </div>
         <div className="flex items-center gap-4">
-          <div className="relative">
+          <div className="relative border-2 border-[#d0d5dd] dark:border-transparent rounded-lg">
             <input
               type="text"
               placeholder="Search products..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded-lg border-2 border-[var(--color-gray-800)] bg-[#fff] dark:bg-[#000] px-4 py-2 pl-10 text-sm text-[#000] dark:text-[#fff] focus:outline-none focus:ring-2 focus:ring-[var(--color-gray-800)] transition-colors"
+              className="w-full rounded-lg bg-transparent outline-none pr-10 focus:ring-4 focus:ring-brand-400/30 focus:border-brand-400 transition-all duration-200 border-2 border-[var(--color-gray-800)] px-8 py-2"
             />
             <svg
               className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#000] dark:text-[#fff]"
@@ -301,7 +301,7 @@ export default function ProductManagement() {
           <Button
             variant="outline"
             onClick={() => setShowFilters(!showFilters)}
-            className="border-2 border-[var(--color-gray-800)] hover:bg-[var(--color-gray-800)] hover:text-white transition-colors"
+            className="border-2 border-[var(--color-gray-800)] hover:bg-[var(--color-gray-800)] transition-colors h-10"
           >
             Filters
           </Button>
@@ -356,7 +356,7 @@ export default function ProductManagement() {
           </h3>
         </div>
 
-        <div className="max-w-full overflow-x-auto">
+        <div className="max-w-full overflow-x-auto" style={{ scrollbarWidth: "none" }}>
           <Table className="w-full">
             <TableHeader>
               <TableRow className="bg-gray-50/50 dark:bg-gray-900/50">
@@ -501,7 +501,7 @@ export default function ProductManagement() {
                   type="text"
                   value={newProduct.name}
                   onChange={(e) => setNewProduct({ ...newProduct, name: e.target.value })}
-                  className="w-full rounded-lg border-2 border-[var(--color-gray-800)] px-4 py-2"
+                  className="w-full rounded-lg bg-transparent outline-none pr-10 focus:ring-4 focus:ring-brand-400/30 focus:border-brand-400 transition-all duration-200 border-2 border-[var(--color-gray-800)] px-4 py-2"
                 />
               </div>
               <div>
@@ -509,7 +509,7 @@ export default function ProductManagement() {
                 <select
                   value={newProduct.category}
                   onChange={(e) => setNewProduct({ ...newProduct, category: e.target.value })}
-                  className="w-full rounded-lg border-2 border-[var(--color-gray-800)] px-4 py-2"
+                  className="w-full rounded-lg bg-transparent outline-none pr-10 focus:ring-4 focus:ring-brand-400/30 focus:border-brand-400 transition-all duration-200 border-2 border-[var(--color-gray-800)] px-4 py-2"
                 >
                   <option value="">Select Category</option>
                   {categories.filter(c => c !== "All").map(category => (
@@ -523,7 +523,7 @@ export default function ProductManagement() {
                   type="text"
                   value={newProduct.price}
                   onChange={(e) => setNewProduct({ ...newProduct, price: e.target.value })}
-                  className="w-full rounded-lg border-2 border-[var(--color-gray-800)] px-4 py-2"
+                  className="w-full rounded-lg bg-transparent outline-none pr-10 focus:ring-4 focus:ring-brand-400/30 focus:border-brand-400 transition-all duration-200 border-2 border-[var(--color-gray-800)] px-4 py-2"
                 />
               </div>
               <div>
@@ -532,7 +532,7 @@ export default function ProductManagement() {
                   type="text"
                   value={newProduct.image}
                   onChange={(e) => setNewProduct({ ...newProduct, image: e.target.value })}
-                  className="w-full rounded-lg border-2 border-[var(--color-gray-800)] px-4 py-2"
+                  className="w-full rounded-lg bg-transparent outline-none pr-10 focus:ring-4 focus:ring-brand-400/30 focus:border-brand-400 transition-all duration-200 border-2 border-[var(--color-gray-800)] px-4 py-2"
                 />
               </div>
               <Button
@@ -562,7 +562,7 @@ export default function ProductManagement() {
                   type="text"
                   value={selectedProduct.name}
                   onChange={(e) => setSelectedProduct({ ...selectedProduct, name: e.target.value })}
-                  className="w-full rounded-lg border-2 border-[var(--color-gray-800)] px-4 py-2"
+                  className="w-full bg-transparent outline-none pr-10 focus:ring-4 focus:ring-brand-400/30 focus:border-brand-400 transition-all duration-200 rounded-lg border-2 border-[var(--color-gray-800)] px-4 py-2"
                 />
               </div>
               <div>
@@ -570,7 +570,7 @@ export default function ProductManagement() {
                 <select
                   value={selectedProduct.category}
                   onChange={(e) => setSelectedProduct({ ...selectedProduct, category: e.target.value })}
-                  className="w-full rounded-lg border-2 border-[var(--color-gray-800)] px-4 py-2"
+                  className="w-full rounded-lg border-2  bg-[#fff] dark:bg-[#000] border-[var(--color-gray-800)] px-4 py-2"
                 >
                   {categories.filter(c => c !== "All").map(category => (
                     <option key={category} value={category}>{category}</option>
@@ -583,7 +583,7 @@ export default function ProductManagement() {
                   type="text"
                   value={selectedProduct.price}
                   onChange={(e) => setSelectedProduct({ ...selectedProduct, price: e.target.value })}
-                  className="w-full rounded-lg border-2 border-[var(--color-gray-800)] px-4 py-2"
+                  className="w-full bg-transparent outline-none pr-10 focus:ring-4 focus:ring-brand-400/30 focus:border-brand-400 transition-all duration-200 rounded-lg border-2 border-[var(--color-gray-800)] px-4 py-2"
                 />
               </div>
               <div>
@@ -591,7 +591,7 @@ export default function ProductManagement() {
                 <select
                   value={selectedProduct.status}
                   onChange={(e) => setSelectedProduct({ ...selectedProduct, status: e.target.value as "active" | "inactive" | "pending" })}
-                  className="w-full rounded-lg border-2 border-[var(--color-gray-800)] px-4 py-2"
+                  className="w-full bg-transparent outline-none pr-10 focus:ring-4 focus:ring-brand-400/30 focus:border-brand-400 transition-all duration-200 rounded-lg border-2 border-[var(--color-gray-800)] px-4 py-2"
                 >
                   <option value="active">Active</option>
                   <option value="inactive">Inactive</option>
@@ -604,7 +604,7 @@ export default function ProductManagement() {
                   type="text"
                   value={selectedProduct.image}
                   onChange={(e) => setSelectedProduct({ ...selectedProduct, image: e.target.value })}
-                  className="w-full rounded-lg border-2 border-[var(--color-gray-800)] px-4 py-2"
+                  className="w-full bg-transparent outline-none pr-10 focus:ring-4 focus:ring-brand-400/30 focus:border-brand-400 transition-all duration-200 rounded-lg border-2 border-[var(--color-gray-800)] px-4 py-2"
                 />
               </div>
               <Button
@@ -621,17 +621,15 @@ export default function ProductManagement() {
 
       {/* Promotion Modal */}
       {showPromotionModal && selectedProduct && (
-        <div className="fixed inset-0 bg-[#000]/80 flex items-center justify-center z-[999999]">
-          <div className="bg-[#fff] dark:bg-[#000] w-[90%] max-w-[600px] rounded-xl shadow-2xl border-2 border-[var(--color-gray-800)]">
+        <div className="fixed inset-0 bg-[#000]/80 flex items-center justify-center z-[999999] p-4">
+          <div className="bg-[#fff] dark:bg-[#000] w-full max-w-[400px] rounded-lg shadow-lg border border-[var(--color-gray-800)]">
             {/* Header */}
-            <div className="p-4 border-b border-gray-200 dark:border-gray-700">
+            <div className="p-3 border-b border-gray-200 dark:border-gray-700">
               <div className="flex justify-between items-center">
-                <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100">
-                  Add Promotion
-                </h3>
+                <h3 className="text-base font-medium">Select Plan</h3>
                 <button
                   onClick={() => setShowPromotionModal(false)}
-                  className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+                  className="text-gray-500"
                 >
                   ✕
                 </button>
@@ -639,55 +637,76 @@ export default function ProductManagement() {
             </div>
 
             {/* Content */}
-            <div className="p-4">
-              <div className="grid grid-cols-3 gap-2 mb-6">
+            <div className="p-3">
+              <div className="space-y-2">
                 {promotionTiers.map((tier) => (
                   <div
                     key={tier.name}
                     onClick={() => handlePromotionSelect(selectedProduct, tier.name)}
-                    className="cursor-pointer group border border-gray-200 dark:border-gray-700 rounded-lg p-3 hover:border-[var(--color-gray-800)] transition-all hover:shadow-md"
+                    className={`flex items-center justify-between p-3 rounded-lg cursor-pointer border
+                      ${selectedProduct.promotion?.type === tier.name.toLowerCase()
+                        ? 'border-[var(--color-gray-800)] bg-gray-50 dark:bg-gray-900'
+                        : 'border-gray-200 dark:border-gray-700'}`}
                   >
-                    <div className="flex items-center gap-2 mb-2">
+                    <div className="flex items-center gap-2">
                       <span className="text-xl">{tier.icon}</span>
-                      <h4 className="font-medium text-gray-900 dark:text-gray-100">{tier.name}</h4>
+                      <div>
+                        <h4 className="font-medium text-sm">{tier.name}</h4>
+                        <p className="text-xs text-gray-500">{tier.price}/mo</p>
+                      </div>
                     </div>
-                    <div className="mb-1">
-                      <span className="text-lg font-semibold text-gray-900 dark:text-gray-100">{tier.price}</span>
-                      <span className="text-sm text-gray-500 ml-1">/mo</span>
+                    <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center
+                      ${selectedProduct.promotion?.type === tier.name.toLowerCase()
+                        ? 'border-[var(--color-gray-800)] bg-[var(--color-gray-800)]'
+                        : 'border-gray-300'}`}
+                    >
+                      {selectedProduct.promotion?.type === tier.name.toLowerCase() && (
+                        <div className="w-1.5 h-1.5 rounded-full bg-white"></div>
+                      )}
                     </div>
-                    <p className="text-xs text-gray-500 mb-2">{tier.description}</p>
-                    <ul className="space-y-1">
-                      {tier.features.map((feature, index) => (
-                        <li key={index} className="flex items-center text-xs text-gray-600 dark:text-gray-400">
-                          <span className="mr-1">•</span>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
                   </div>
                 ))}
               </div>
 
-              <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
-                <label className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+              <div className="mt-4 space-y-3">
+                <label className="flex items-center gap-2 text-sm">
                   <input
                     type="checkbox"
-                    className="rounded border-gray-300 dark:border-gray-600"
+                    className="rounded border-gray-300 w-4 h-4"
                     onChange={(e) => {
                       const autoRenew = e.target.checked;
-                      // Store auto-renew preference
                       localStorage.setItem('promotionAutoRenew', String(autoRenew));
                     }}
                   />
-                  Enable auto-renewal
+                  Auto-renew
                 </label>
-                <Button
-                  variant="primary"
-                  className="px-6"
-                  onClick={() => setShowPromotionModal(false)}
-                >
-                  Cancel
-                </Button>
+                <div className="flex gap-2">
+                  <Button
+                    variant="outline"
+                    className="flex-1"
+                    onClick={() => setShowPromotionModal(false)}
+                  >
+                    Cancel
+                  </Button>
+                  <Button
+                    variant="primary"
+                    className="flex-1"
+                    onClick={() => {
+                      const selectedTier = promotionTiers.find(
+                        tier => tier.name.toLowerCase() === selectedProduct.promotion?.type
+                      );
+                      if (selectedTier) {
+                        handlePromotionSelect(
+                          selectedProduct,
+                          selectedTier.name,
+                          localStorage.getItem('promotionAutoRenew') === 'true'
+                        );
+                      }
+                    }}
+                  >
+                    Confirm
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

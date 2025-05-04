@@ -1,16 +1,19 @@
 "use client";
 import { ThemeToggleButton } from "@/components/common/ThemeToggleButton";
-import NotificationDropdown from "@/components/header/NotificationDropdown";
 import UserDropdown from "@/components/header/UserDropdown";
 import { useSidebar } from "@/context/SidebarContext";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const AppHeader: React.FC = () => {
   const [isApplicationMenuOpen, setApplicationMenuOpen] = useState(false);
 
   const { isMobileOpen, toggleSidebar, toggleMobileSidebar } = useSidebar();
+
+  useEffect(() => {
+    setApplicationMenuOpen(false);
+  }, [isMobileOpen]);
 
   const handleToggle = () => {
     if (window.innerWidth >= 1024) {
@@ -37,7 +40,7 @@ const AppHeader: React.FC = () => {
 
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
-    };
+    };  
   }, []);
 
   return (
@@ -160,7 +163,6 @@ const AppHeader: React.FC = () => {
         >
           <div className="flex items-center gap-2 2xsm:gap-3">
             <ThemeToggleButton />
-            <NotificationDropdown />
           </div>
           <UserDropdown />
         </div>

@@ -74,7 +74,7 @@
   --color-gray-600: #475467;
   --color-gray-700: #344054;
   --color-gray-800: #ffffff24;
-  --color-gray-900: #000000;
+  --color-gray-900: #0d0d0d;
   --color-gray-950: #0c111d;
   --color-gray-dark: #1a2231;
 
@@ -741,201 +741,58 @@ span.flatpickr-weekday,
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --color-text: #000000;
-  --color-background: #ffffff;
-  --color-primary: #000000;
-  --color-secondary: #666666;
-}
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
 
-.dark {
-  --color-text: #ffffff;
-  --color-background: #111827;
-  --color-primary: #ffffff;
-  --color-secondary: #9ca3af;
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
 }
 
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
+  * {
+    @apply border-gray-200 dark:border-gray-800;
   }
-  
   body {
-    @apply relative font-normal font-outfit z-1;
-    background-color: var(--color-background);
-    color: var(--color-text);
-  }
-
-  /* Text colors for content */
-  .text-content {
-    color: var(--color-text);
-  }
-
-  .text-content-secondary {
-    color: var(--color-secondary);
-  }
-
-  /* Table text colors */
-  th {
-    color: var(--color-text);
-  }
-
-  td {
-    color: var(--color-text);
-  }
-
-  /* Form element colors */
-  input, select, textarea {
-    color: var(--color-text);
-    background-color: var(--color-background);
-  }
-}
-
-/* Text Colors */
-.text-primary {
-  color: var(--primary);
-}
-
-.text-secondary {
-  color: var(--secondary);
-}
-
-/* Background Colors */
-.bg-primary {
-  background-color: var(--background);
-}
-
-.bg-secondary {
-  background-color: var(--accent);
-}
-
-/* Theme Transitions */
-* {
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
-}
-
-/* Table Styles */
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-th {
-  color: var(--primary);
-  background-color: var(--accent);
-  font-weight: 500;
-  text-align: left;
-}
-
-td {
-  color: var(--foreground);
-}
-
-/* Card Styles */
-.card {
-  background-color: var(--background);
-  border: 1px solid var(--border);
-  border-radius: 0.5rem;
-}
-
-/* Button Styles */
-button {
-  background-color: var(--accent);
-  color: var(--foreground);
-  border: 1px solid var(--border);
-}
-
-button:hover {
-  background-color: var(--border);
-}
-
-/* Link Styles */
-a {
-  color: var(--primary);
-}
-
-a:hover {
-  opacity: 0.8;
-}
-
-/* Custom Classes */
-.content-text {
-  color: var(--foreground);
-}
-
-.content-bg {
-  background-color: var(--background);
-}
-
-/* Dark mode specific overrides */
-.dark .content-text {
-  color: var(--foreground);
-}
-
-.dark .content-bg {
-  background-color: var(--background);
-}
-
-/* Utility classes for text colors */
-.text-theme-primary {
-  color: var(--primary);
-}
-
-.text-theme-secondary {
-  color: var(--secondary);
-}
-
-/* Border Colors */
-.border-theme {
-  border-color: var(--border);
-}
-
-/* Background utility classes */
-.bg-theme-primary {
-  background-color: var(--background);
-}
-
-.bg-theme-secondary {
-  background-color: var(--accent);
-}
-
-/* Product page specific styles */
-.product-text {
-  color: var(--color-text) !important;
-}
-
-.product-heading {
-  @apply text-black dark:text-white font-semibold;
-}
-
-.product-description {
-  @apply text-black dark:text-white;
-}
-
-.product-price {
-  @apply text-black dark:text-white font-medium;
-}
-
-.product-meta {
-  @apply text-gray-600 dark:text-gray-300;
-}
-
-/* Ensure text visibility in both themes */
-.theme-text {
-  @apply text-black dark:text-white;
-}
-
-.theme-text-secondary {
-  @apply text-gray-600 dark:text-gray-300;
-}
-
-/* Override any conflicting styles */
-[class*="text-"] {
-  &.force-theme {
-    @apply text-black dark:text-white;
+    @apply bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100;
   }
 }
